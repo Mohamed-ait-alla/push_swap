@@ -84,18 +84,34 @@ void	ft_push_b(t_stack *stack_a, t_stack **stack_b)
 
 void	ft_rotate_a(t_stack **stack_a)
 {
+	t_stack	*first;
 	t_stack	*tmp;
-	t_stack	*tmp_1;
-	t_stack	*tmp_2;
 
-	tmp = (*stack_a)->next;
-	tmp_1 = (*stack_a);
-	tmp_2 = (*stack_a);
-	while (tmp)
-	{
-		tmp_1 = tmp;
-		tmp = tmp -> next;
-		tmp_1 = tmp_1 -> next;
-	}
-	tmp->next = tmp_2;
+	first = (*stack_a);
+	tmp = (*stack_a);
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = first;
+	*stack_a = first->next;
+	first->next = NULL;
+}
+
+void	ft_rotate_b(t_stack **stack_b)
+{
+	t_stack	*first;
+	t_stack *tmp;
+
+	first = *stack_b;
+	tmp = *stack_b;
+	while(tmp->next)
+		tmp = tmp->next;
+	tmp->next = first;
+	*stack_b = first->next;
+	first->next = NULL;
+}
+
+void	ft_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_rotate_a(*stack_a);
+	ft_rotate_b(*stack_b);
 }

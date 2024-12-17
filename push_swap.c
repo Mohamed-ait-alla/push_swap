@@ -75,13 +75,14 @@ int main(int argc, char **argv)
     t_stack *tmp;
 
     tmp = stack_a;
-    while (stack_a)
+    while (tmp)
     {
-        printf("%d  ", stack_a->value);
-        stack_a = stack_a->next;
+        printf("%d  ", tmp->value);
+        tmp = tmp->next;
     }
-    ft_rotate_a(&tmp);
+    ft_rotate_a(&stack_a);
     printf("\nafter rotate\n");
+	tmp = stack_a;
     while (tmp)
     {
         printf("%d  ", tmp->value);
