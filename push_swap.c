@@ -25,34 +25,6 @@ long	ft_atoi(const char *str)
 	return (sign * result);
 }
 
-t_stack *new_node(int value)
-{
-    t_stack *new;
-
-    new = (t_stack *)malloc(sizeof(t_stack));
-    if (!new)
-        return (NULL);
-    new->value = value;
-    new->next = NULL;
-    return (new);
-}
-
-void    push(t_stack **stack, int value)
-{
-    t_stack *new;
-
-    new = new_node(value);
-    if (!(*stack))
-        (*stack) = new;
-    else
-    {
-        t_stack *current = *stack;
-        while(current->next)
-            current = current->next;
-        current->next = new;
-    }
-}
-
 int ft_check_duplicates(t_stack *stack, int value)
 {
     while (stack)
@@ -99,9 +71,20 @@ int main(int argc, char **argv)
         i++;
     }
     // display the stack
+    printf("before rotate\n");
+    t_stack *tmp;
+
+    tmp = stack_a;
     while (stack_a)
     {
         printf("%d  ", stack_a->value);
         stack_a = stack_a->next;
+    }
+    ft_rotate_a(&tmp);
+    printf("\nafter rotate\n");
+    while (tmp)
+    {
+        printf("%d  ", tmp->value);
+        tmp = tmp->next;
     }
 }
