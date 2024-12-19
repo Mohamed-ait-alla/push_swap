@@ -71,7 +71,7 @@ int main(int argc, char **argv)
         i++;
     }
     // display the stack
-    printf("before rotate\n");
+    printf("before r_rotate\n");
     t_stack *tmp;
 
     tmp = stack_a;
@@ -80,12 +80,12 @@ int main(int argc, char **argv)
         printf("%d  ", tmp->value);
         tmp = tmp->next;
     }
-    ft_rotate_a(&stack_a);
-    printf("\nafter rotate\n");
+    ft_reverse_rotate_a(&stack_a);
+    printf("\nafter r_rotate\n");
 	tmp = stack_a;
     while (tmp)
     {
-        printf("%d  ", tmp->value);
-        tmp = tmp->next;
+		printf("%d  ", tmp->value);
+		tmp = tmp->next;
     }
 }

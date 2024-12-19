@@ -112,6 +112,44 @@ void	ft_rotate_b(t_stack **stack_b)
 
 void	ft_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_rotate_a(*stack_a);
-	ft_rotate_b(*stack_b);
+	ft_rotate_a(stack_a);
+	ft_rotate_b(stack_b);
+}
+
+void	ft_reverse_rotate_a(t_stack **stack_a)
+{
+	t_stack	*tmp;
+	t_stack	*tmp_1;
+	t_stack *last;
+
+	tmp = *stack_a;
+	tmp_1 = *stack_a;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	last = tmp->next;
+	tmp->next = NULL;
+	*stack_a = last;
+	last->next = tmp_1;
+}
+
+void	ft_reverse_rotate_b(t_stack **stack_b)
+{
+	t_stack	*tmp;
+	t_stack *tmp_1;
+	t_stack	*last;
+
+	tmp = *stack_b;
+	tmp_1 = *stack_b;
+	while (tmp->next->next)
+		tmp = tmp ->next;
+	last = tmp->next;
+	tmp->next = NULL;
+	*stack_b = last;
+	last->next = tmp_1;	
+}
+
+void	ft_reverse_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_reverse_rotate_a(stack_a);
+	ft_reverse_rotate_b(stack_b);
 }

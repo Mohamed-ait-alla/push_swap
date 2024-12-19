@@ -16,4 +16,5 @@ typedef struct s_stack {
     int check_for_empty_stack(t_stack *stack);
     void    ft_swap_a(t_stack **stack_a);
 	void	ft_rotate_a(t_stack **stack_a);
+	void	ft_reverse_rotate_a(t_stack **stack_a);
 #endif
