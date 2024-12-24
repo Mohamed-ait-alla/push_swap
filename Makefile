@@ -1,0 +1,25 @@
+SRCS =  push_swap.c ft_check_errors.c ft_init_stack.c ft_rules.c ft_rules_1.c ft_utils.c
+
+OBJS = ${SRCS:.c=.o}
+NAME = push-swap-lib.a
+LIBC = ar rcs
+CC = cc
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror
+
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
+
+${NAME}: ${OBJS}
+	${LIBC} ${NAME} ${OBJS}
+all: ${NAME}
+
+clean:
+	${RM} ${OBJS}
+
+fclean: clean
+	${RM} ${NAME}
+
+re: fclean all
+
+.PHONY: all clean fclean re
