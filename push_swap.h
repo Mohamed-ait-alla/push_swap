@@ -1,14 +1,21 @@
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-#include <stdio.h>
+# define PUSH_SWAP_H
+#include <stdio.h> // we don't need it when we gonna push that shit
 #include <limits.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 
+
 typedef struct s_stack {
-    int value;
-    struct s_stack *next;
+    int				value;
+	int				index;
+	int				push_cost;
+	bool	 		above_median;
+	bool			cheapest;
+	struct s_stack	*target_node;
+    struct s_stack	*next;
 } t_stack;
 
 // function to create new node
@@ -52,5 +59,36 @@ void	ft_reverse_rotate(t_stack **stack);
 
 // function for actions: rra and rrb at the same time
 void	ft_reverse_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
+
+// function to check if a stack is sorted or not
+bool	ft_is_sorted(t_stack *stack);
+
+// function to calculate the members of a stack
+int	ft_stack_len(t_stack *stack);
+
+// function to find the biggest node in the stack
+t_stack	*ft_find_biggest_node(t_stack *stack);
+
+// function to sort just three nodes in a stack
+void	ft_sort_three(t_stack **stack_a);
+
+// function to sort stack that has more thatn three nodes
+void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
+
+// function to init the nodes in a : set target, get the cheapest...
+void	ft_init_nodes_of_a(t_stack *stack_a, t_stack *stack_b);
+
+// function to get the index and set the above-medin to each node
+void	ft_current_index(t_stack *stack);
+
+// function to set a target node from stack b to each node in stack a
+static void	ft_set_target_node_a(t_stack *stack_a, t_stack *stack_b);
+
+// function to calculate the push cost to each node in stack a
+static void	ft_calc_cost_analysis_a(t_stack *stack_a, t_stack *stack_b);
+
+// function to set the cheapest node in each stack
+void	ft_set_cheapest(t_stack *stack);
+
 
 #endif

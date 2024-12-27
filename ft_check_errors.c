@@ -1,16 +1,5 @@
 #include "push_swap.h"
 
-int ft_check_duplicates(t_stack *stack, int value)
-{
-    while (stack)
-    {
-        if (stack->value == value)
-            return (0);
-        stack = stack -> next;
-    }
-    return (1);
-}
-
 int ft_check_for_non_integers(const char *s)
 {
 	int	i;

@@ -25,3 +25,16 @@ int	check_for_empty_stack(t_stack *stack)
 		return (0);
 	return (1);
 }
+
+bool	ft_is_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack)
+	{
+		if (stack -> value > stack -> next -> value)
+			return (false);
+		stack = stack -> next;
+	}
+	return (true);
+}
