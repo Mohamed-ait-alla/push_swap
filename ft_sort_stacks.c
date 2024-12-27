@@ -5,7 +5,13 @@ static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*cheapest_node;
 
 	cheapest_node = ft_get_cheapest_node(*stack_a);
-	
+	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
+		ft_rotate_both(stack_a, stack_b, cheapest_node);
+	else if (!(cheapest_node->above_median) && !(cheapest_node->target_node->above_median))
+		ft_rev_rotate_both(stack_a, stack_b, false);
+	ft_prep_for_push(stack_a, cheapest_node, 'a');
+	ft_prep_for_push(stack_b, cheapest_node->target_node, 'b');
+	pb(stack_b, stack_a, false);
 }
 
 void	ft_sort_three(t_stack **stack_a)

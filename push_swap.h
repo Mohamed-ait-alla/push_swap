@@ -90,5 +90,19 @@ static void	ft_calc_cost_analysis_a(t_stack *stack_a, t_stack *stack_b);
 // function to set the cheapest node in each stack
 void	ft_set_cheapest(t_stack *stack);
 
+// function to stat pushing nodes from a to b 
+static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
+
+// function to find the cheapest node
+t_stack	*ft_get_cheapest_node(t_stack *stack);
+
+// function to rotate stack a and stack b at the same time
+void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_node);
+
+// function to reverse rotate stack a and b at the same time 
+void	ft_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_node);
+
+// function to test the top node
+void	ft_prep_for_push(t_stack **stack, t_stack *top_node, char stack_name);
 
 #endif

@@ -35,3 +35,11 @@ void	rr(t_stack	**stack_a, t_stack **stack_b, bool to_print)
 	if (!to_print)
 		printf("rr\n");
 }
+
+void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_node)
+{
+	while (*stack_b != cheapest_node->target_node && *stack_a != cheapest_node)
+		rr(stack_a, stack_b, false);
+	ft_current_index(*stack_a);
+	ft_current_index(*stack_b);
+}
