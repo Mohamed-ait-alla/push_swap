@@ -62,6 +62,7 @@ t_stack	*ft_get_cheapest_node(t_stack *stack)
 			return (stack);
 		stack = stack -> next;
 	}
+	return (stack);
 }
 
 void	ft_prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)

@@ -24,38 +24,17 @@ int main(int argc, char **argv)
         i++;
     }
     // display the stack
-    printf("before r_rotate\n");
+	ft_sort_stacks(&stack_a, &stack_b);
 	printf("-------------------------------------------\n");
     t_stack *tmp;
-	t_stack *tmp_1;
 
     tmp = stack_a;
-	tmp_1 = stack_b;
     while (tmp)
     {
-        printf("%d ", tmp->value);
-		
-		if (tmp_1)
-		{
-			printf("%d\n", tmp_1->value);
-				tmp_1 = tmp_1->next;
-		}
-		else
-			printf("\n");
+        printf("%d \n", tmp->value);
         tmp = tmp->next;
 
     }
 	printf("- -\na b\n");
-	printf("-------------------------------------------\n");
-    // ft_reverse_rotate_a(&stack_a);
-    // printf("\nafter r_rotate\n");
-	// tmp = stack_a;
-	// // tmp_1 = stack_b;
-    // while (tmp)
-    // {
-	// 	printf("%d %d\n", tmp->value);
-	// 	tmp = tmp->next;
-	// 	// tmp_1 = tmp_1->next;
-    // }
-	// printf("- -\na b");
+
 }

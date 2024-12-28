@@ -84,17 +84,11 @@ void	ft_init_nodes_of_a(t_stack *stack_a, t_stack *stack_b);
 // function to get the index and set the above-medin to each node
 void	ft_current_index(t_stack *stack);
 
-// function to set a target node from stack b to each node in stack a
-static void	ft_set_target_node_a(t_stack *stack_a, t_stack *stack_b);
 
-// function to calculate the push cost to each node in stack a
-static void	ft_calc_cost_analysis_a(t_stack *stack_a, t_stack *stack_b);
 
 // function to set the cheapest node in each stack
 void	ft_set_cheapest(t_stack *stack);
 
-// function to stat pushing nodes from a to b 
-static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
 
 // function to find the cheapest node
 t_stack	*ft_get_cheapest_node(t_stack *stack);
@@ -111,11 +105,6 @@ void	ft_prep_for_push(t_stack **stack, t_stack *top_node, char stack_name);
 // function to initialize to nodes in b
 void	ft_init_nodes_of_b(t_stack *stack_a, t_stack *stack_b);
 
-// function to set the target node to each node in b
-void	ft_set_target_node_b(t_stack *stack_a, t_stack *stack_b);
-
-// function to set the min at the top of the stack a, last step in the algorithm
-static void	ft_set_min_on_top(t_stack **stack_a);
 
 // #________________functions for actions____________________#
 

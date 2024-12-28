@@ -50,9 +50,9 @@ void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b)
 
 	len_a = ft_stack_len(*stack_a);
 	if (len_a-- > 3 && !ft_is_sorted(*stack_a))
-		ft_push(&stack_b, &stack_a);
+		ft_push(stack_b, stack_a);
 	if (len_a-- > 3 && !ft_is_sorted(*stack_a))
-		ft_push(&stack_b, &stack_a);
+		ft_push(stack_b, stack_a);
 	while (len_a-- > 3 && !ft_is_sorted(*stack_a))
 	{
 		ft_init_nodes_of_a(*stack_a, *stack_b);
