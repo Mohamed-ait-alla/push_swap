@@ -69,6 +69,9 @@ int	ft_stack_len(t_stack *stack);
 // function to find the biggest node in the stack
 t_stack	*ft_find_biggest_node(t_stack *stack);
 
+// function to find the smallest node in the stack
+t_stack	*ft_find_smallest_node(t_stack *stack);
+
 // function to sort just three nodes in a stack
 void	ft_sort_three(t_stack **stack_a);
 
@@ -104,5 +107,31 @@ void	ft_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_
 
 // function to test the top node
 void	ft_prep_for_push(t_stack **stack, t_stack *top_node, char stack_name);
+
+// function to initialize to nodes in b
+void	ft_init_nodes_of_b(t_stack *stack_a, t_stack *stack_b);
+
+// function to set the target node to each node in b
+void	ft_set_target_node_b(t_stack *stack_a, t_stack *stack_b);
+
+// function to set the min at the top of the stack a, last step in the algorithm
+static void	ft_set_min_on_top(t_stack **stack_a);
+
+// #________________functions for actions____________________#
+
+void	pa(t_stack	**stack_a, t_stack **stack_b, bool to_print);
+void	pb(t_stack **stack_b, t_stack **stack_a, bool to_print);
+void	sa(t_stack **stack_a, bool to_print);
+void	sb(t_stack **stack_b, bool to_print);
+void	ss(t_stack **stack_a, t_stack **stack_b, bool to_print);
+void	ra(t_stack **stack_a, bool to_print);
+void	rb(t_stack **stack_b, bool to_print);
+void	rr(t_stack	**stack_a, t_stack **stack_b, bool to_print);
+void	rra(t_stack **stack_a, bool to_print);
+void	rrb(t_stack **stack_b, bool to_print);
+void	rrr(t_stack **stack_a, t_stack **stack_b, bool to_print);
+
+// #________________functions for actions____________________#
+
 
 #endif

@@ -39,6 +39,21 @@ t_stack	*ft_find_biggest_node(t_stack *stack)
 	return (biggest_node);
 }
 
+t_stack	*ft_find_smallest_node(t_stack *stack)
+{
+	t_stack	*smallest_node;
+
+	smallest_node = stack;
+	stack = stack -> next;
+	while (stack)
+	{
+		if (stack -> value < smallest_node -> value)
+			smallest_node = stack;
+		stack = stack -> next;
+	}
+	return (smallest_node);
+}
+
 t_stack	*ft_get_cheapest_node(t_stack *stack)
 {
 	while (stack)
