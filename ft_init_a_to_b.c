@@ -9,6 +9,7 @@ void	ft_current_index(t_stack *stack)
 	if (!stack)
 		return ;
 	median = ft_stack_len(stack) / 2;
+	i = 0;
 	while (stack)
 	{
 		stack->index = i;
