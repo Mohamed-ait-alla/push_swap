@@ -27,3 +27,23 @@ void    push(t_stack **stack, int value)
         current->next = new;
     }
 }
+
+void	ft_init_stack_a(t_stack **stack_a, char **argv)
+{
+	int		i;
+	long	n;
+
+	i = 0;
+	while (argv[i])
+	{
+		n = ft_atol(argv[i]);
+        if (n > INT_MAX || n < INT_MIN || !ft_check_duplicates(*stack_a, (int)n) || !ft_check_for_non_integers(argv[i]))
+        {
+			ft_free_stack(stack_a);
+			printf("Error\n");
+            exit(1);
+        }
+        push(stack_a, (int)n);
+        i++;
+	}
+}

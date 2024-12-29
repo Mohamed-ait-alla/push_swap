@@ -17,7 +17,7 @@ int ft_check_for_non_integers(const char *s)
     return (1);
 }
 
-long	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	long	result;
 	int		sign;
@@ -39,4 +39,15 @@ long	ft_atoi(const char *str)
 		str++;
 	}
 	return (sign * result);
+}
+
+int ft_check_duplicates(t_stack *stack, int value)
+{
+    while (stack)
+    {
+        if (stack->value == value)
+            return (0);
+        stack = stack -> next;
+    }
+    return (1);
 }

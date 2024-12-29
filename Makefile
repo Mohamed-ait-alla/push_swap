@@ -1,6 +1,7 @@
 SRCS =  ft_init_stack.c ft_check_errors.c ft_utils.c \
 			ft_sort_stacks.c ft_stack_utils.c ft_init_a_to_b.c \
-			ft_init_b_to_a.c ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c 
+			ft_init_b_to_a.c ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
+			ft_clear_stacks.c ft_split.c
 
 
 OBJS = ${SRCS:.c=.o}

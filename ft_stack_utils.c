@@ -13,17 +13,6 @@ int	ft_stack_len(t_stack *stack)
 	return (count);
 }
 
-int ft_check_duplicates(t_stack *stack, int value)
-{
-    while (stack)
-    {
-        if (stack->value == value)
-            return (0);
-        stack = stack -> next;
-    }
-    return (1);
-}
-
 t_stack	*ft_find_biggest_node(t_stack *stack)
 {
 	t_stack *biggest_node;

@@ -20,7 +20,7 @@ void	ft_set_target_node_b(t_stack *stack_a, t_stack *stack_b)
 			current_a = current_a -> next;
 		}
 		if (best_match_index == LONG_MAX)
-			stack_b->target_node = ft_find_biggest_node(stack_a);
+			stack_b->target_node = ft_find_smallest_node(stack_a);
 		else
 			stack_b->target_node = target_node;
 		stack_b = stack_b -> next;

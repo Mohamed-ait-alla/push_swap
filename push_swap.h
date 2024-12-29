@@ -18,6 +18,12 @@ typedef struct s_stack {
     struct s_stack	*next;
 } t_stack;
 
+
+// we don't need this function when we gonna push this shit //
+void	ft_display(t_stack *stack);
+
+
+
 // function to create new node
 t_stack	*new_node(int value);
 
@@ -25,7 +31,13 @@ t_stack	*new_node(int value);
 void    push(t_stack **stack, int value);
 
 // function to convert a string to an integer
-long	ft_atoi(const char *str);
+long	ft_atol(const char *str);
+
+// split function 
+char	**ft_split(char const *s, char c);
+
+// function to free the stack if an error occurs
+void	ft_free_stack(t_stack **stack);
 
 // function to check for duplicate in a stack
 int	ft_check_duplicates(t_stack *stack, int value);
@@ -42,8 +54,8 @@ int	check_for_empty_stack(t_stack *stack);
 // function for actions: sa and sb
 void	ft_swap(t_stack **stack);
 
-// function for actions : swap a and b at the same time
-void	ft_swap_a_and_b(t_stack **stack_a, t_stack **stack_b);
+// function to initialize the stack a
+void	ft_init_stack_a(t_stack **stack_a, char **argv);
 
 // function for actions: pa and pb
 void	ft_push(t_stack **stack_a, t_stack **stack_b);
@@ -109,7 +121,7 @@ void	ft_init_nodes_of_b(t_stack *stack_a, t_stack *stack_b);
 // #________________functions for actions____________________#
 
 void	pa(t_stack	**stack_a, t_stack **stack_b, bool to_print);
-void	pb(t_stack **stack_b, t_stack **stack_a, bool to_print);
+void	pb(t_stack **stack_a, t_stack **stack_b, bool to_print);
 void	sa(t_stack **stack_a, bool to_print);
 void	sb(t_stack **stack_b, bool to_print);
 void	ss(t_stack **stack_a, t_stack **stack_b, bool to_print);
