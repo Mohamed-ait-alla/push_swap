@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_stacks.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:39:42 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 17:59:37 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
@@ -7,7 +19,8 @@ static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 	cheapest_node = ft_get_cheapest_node(*stack_a);
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
 		ft_rotate_both(stack_a, stack_b, cheapest_node);
-	else if (!(cheapest_node->above_median) && !(cheapest_node->target_node->above_median))
+	else if (!(cheapest_node->above_median)
+		&& !(cheapest_node->target_node->above_median))
 		ft_rev_rotate_both(stack_a, stack_b, false);
 	ft_prep_for_push(stack_a, cheapest_node, 'a');
 	ft_prep_for_push(stack_b, cheapest_node->target_node, 'b');
@@ -34,6 +47,7 @@ static void	ft_set_min_on_top(t_stack **stack_a)
 void	ft_sort_three(t_stack **stack_a)
 {
 	t_stack	*biggest_node;
+
 	biggest_node = ft_find_biggest_node(*stack_a);
 	if (biggest_node == *stack_a)
 		ra(stack_a, false);

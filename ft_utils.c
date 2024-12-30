@@ -1,5 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:39:08 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 18:02:29 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "push_swap.h"
 
 bool	ft_is_sorted(t_stack *stack)
 {
@@ -17,13 +28,12 @@ bool	ft_is_sorted(t_stack *stack)
 // display a stack
 void	ft_display(t_stack *stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-    tmp = stack;
-    while (tmp)
-    {
-        printf("%d \n", tmp->value);
-        tmp = tmp->next;
-
-    }
+	tmp = stack;
+	while (tmp)
+	{
+		printf("%d \n", tmp->value);
+		tmp = tmp->next;
+	}
 }

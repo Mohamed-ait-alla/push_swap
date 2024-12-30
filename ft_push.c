@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:40:03 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 17:55:26 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	ft_push(t_stack **dest, t_stack **source)
 {
-	int	value;
-	t_stack *new;
+	int		value;
+	t_stack	*new;
 
 	if (!*source)
 		return ;

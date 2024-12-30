@@ -1,10 +1,21 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_init_a_to_b.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:40:26 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 17:47:01 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "push_swap.h"
 
 void	ft_current_index(t_stack *stack)
 {
 	int	i;
-	int median;
+	int	median;
 
 	if (!stack)
 		return ;
@@ -15,7 +26,7 @@ void	ft_current_index(t_stack *stack)
 		stack->index = i;
 		if (i <= median)
 			stack->above_median = true;
-		else 
+		else
 			stack->above_median = false;
 		stack = stack -> next;
 		++i;
@@ -34,8 +45,8 @@ static void	ft_set_target_node_a(t_stack *stack_a, t_stack *stack_b)
 		current_b = stack_b;
 		while (current_b)
 		{
-			if (current_b->value < stack_a->value 
-					&& current_b->value > best_match_index)
+			if (current_b->value < stack_a->value
+				&& current_b->value > best_match_index)
 			{
 				best_match_index = current_b->value;
 				target_node = current_b;
@@ -48,7 +59,6 @@ static void	ft_set_target_node_a(t_stack *stack_a, t_stack *stack_b)
 			stack_a->target_node = target_node;
 		stack_a = stack_a -> next;
 	}
-
 }
 
 static void	ft_calc_cost_analysis_a(t_stack *stack_a, t_stack *stack_b)
@@ -89,7 +99,6 @@ void	ft_set_cheapest(t_stack *stack)
 		stack = stack->next;
 	}
 	cheapest_node->cheapest = true;
-	
 }
 
 void	ft_init_nodes_of_a(t_stack *stack_a, t_stack *stack_b)

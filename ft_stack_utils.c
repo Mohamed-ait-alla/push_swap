@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stack_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:39:25 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 18:00:54 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_stack_len(t_stack *stack)
@@ -15,7 +27,7 @@ int	ft_stack_len(t_stack *stack)
 
 t_stack	*ft_find_biggest_node(t_stack *stack)
 {
-	t_stack *biggest_node;
+	t_stack	*biggest_node;
 
 	biggest_node = stack;
 	stack = stack -> next;

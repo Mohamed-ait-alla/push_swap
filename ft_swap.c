@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:39:16 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 18:01:37 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	ft_swap(t_stack **stack)
 {
-	int tmp;
+	int	tmp;
 
-    if (!*stack || !(*stack)->next)
-        return ;
-    tmp = ((*stack)->value);
-    (*stack)->value = (*stack)->next->value;
-    (*stack)->next->value = tmp;
+	if (!*stack || !(*stack)->next)
+		return ;
+	tmp = ((*stack)->value);
+	(*stack)->value = (*stack)->next->value;
+	(*stack)->next->value = tmp;
 }
 
 void	sa(t_stack **stack_a, bool to_print)

@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_init_stack.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:40:08 by mait-all          #+#    #+#             */
+/*   Updated: 2024/12/30 17:54:51 by mait-all         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_stack *ft_new_node(int value)
+t_stack	*ft_new_node(int value)
 {
-    t_stack *new;
+	t_stack	*new;
 
-    new = (t_stack *)malloc(sizeof(t_stack));
-    if (!new)
-        return (NULL);
-    new->value = value;
-    new->next = NULL;
-    return (new);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->next = NULL;
+	return (new);
 }
 
 static long	ft_atol(const char *str)
@@ -36,21 +48,21 @@ static long	ft_atol(const char *str)
 	return (sign * result);
 }
 
-
 static void	ft_append_node(t_stack **stack, int value)
 {
-    t_stack *new;
+	t_stack	*new;
+	t_stack	*current;
 
-    new = ft_new_node(value);
-    if (!(*stack))
-        (*stack) = new;
-    else
-    {
-        t_stack *current = *stack;
-        while(current->next)
-            current = current->next;
-        current->next = new;
-    }
+	new = ft_new_node(value);
+	if (!(*stack))
+		(*stack) = new;
+	else
+	{
+		current = *stack;
+		while (current->next)
+			current = current->next;
+		current->next = new;
+	}
 }
 
 void	ft_init_stack_a(t_stack **stack_a, char **argv)
@@ -62,13 +74,15 @@ void	ft_init_stack_a(t_stack **stack_a, char **argv)
 	while (argv[i])
 	{
 		n = ft_atol(argv[i]);
-        if (n > INT_MAX || n < INT_MIN || !ft_check_duplicates(*stack_a, (int)n) || !ft_check_for_non_integers(argv[i]))
-        {
+		if (n > INT_MAX || n < INT_MIN
+			|| !ft_check_duplicates(*stack_a, (int)n)
+			|| !ft_check_for_non_integers(argv[i]))
+		{
 			ft_free_stack(stack_a);
 			printf("Error\n");
-            exit(1);
-        }
-        ft_append_node(stack_a, (int)n);
-        i++;
+			exit(1);
+		}
+		ft_append_node(stack_a, (int)n);
+		i++;
 	}
 }
