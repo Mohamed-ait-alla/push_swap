@@ -1,10 +1,12 @@
 #include "push_swap.h"
 
-void	ft_rotate(t_stack **stack)
+static void	ft_rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*tmp;
 
+	if (!*stack || !(*stack)->next)
+		return ;
 	first = (*stack);
 	tmp = (*stack);
 	while (tmp->next)

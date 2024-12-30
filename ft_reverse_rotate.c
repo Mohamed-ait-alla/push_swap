@@ -1,11 +1,13 @@
 #include "push_swap.h"
 
-void	ft_reverse_rotate(t_stack **stack)
+static void	ft_reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tmp_1;
 	t_stack *last;
 
+	if (!*stack || !(*stack)->next)
+		return ;
 	tmp = *stack;
 	tmp_1 = *stack;
 	while (tmp->next->next)

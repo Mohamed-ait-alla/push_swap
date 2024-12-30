@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-void	ft_swap(t_stack **stack)
+static void	ft_swap(t_stack **stack)
 {
-    int tmp;
+	int tmp;
 
-    if (!check_for_empty_stack(*stack))
+    if (!*stack || !(*stack)->next)
         return ;
     tmp = ((*stack)->value);
     (*stack)->value = (*stack)->next->value;

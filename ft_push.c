@@ -1,17 +1,17 @@
 #include "push_swap.h"
 
-void	ft_push(t_stack **stack_a, t_stack **stack_b)
+static void	ft_push(t_stack **dest, t_stack **source)
 {
 	int	value;
 	t_stack *new;
 
-	if (!*stack_b)
+	if (!*source)
 		return ;
-	value = (*stack_b)->value;
+	value = (*source)->value;
 	new = new_node(value);
-	new->next = *stack_a;
-	*stack_a = new;
-	ft_del_one(stack_b);
+	new->next = *dest;
+	*dest = new;
+	ft_del_one(source);
 }
 
 void	pa(t_stack	**stack_a, t_stack **stack_b, bool to_print)

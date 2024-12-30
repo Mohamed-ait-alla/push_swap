@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_stack *new_node(int value)
+t_stack *ft_new_node(int value)
 {
     t_stack *new;
 
@@ -12,11 +12,36 @@ t_stack *new_node(int value)
     return (new);
 }
 
-void    push(t_stack **stack, int value)
+static long	ft_atol(const char *str)
+{
+	long	result;
+	int		sign;
+
+	result = 0;
+	sign = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
+	{
+		sign = -1;
+		str++;
+	}
+	while (*str >= 48 && *str <= 57)
+	{
+		result = (result * 10) + (*str - 48);
+		str++;
+	}
+	return (sign * result);
+}
+
+
+static void	ft_append_node(t_stack **stack, int value)
 {
     t_stack *new;
 
-    new = new_node(value);
+    new = ft_new_node(value);
     if (!(*stack))
         (*stack) = new;
     else
@@ -43,7 +68,7 @@ void	ft_init_stack_a(t_stack **stack_a, char **argv)
 			printf("Error\n");
             exit(1);
         }
-        push(stack_a, (int)n);
+        ft_append_node(stack_a, (int)n);
         i++;
 	}
 }

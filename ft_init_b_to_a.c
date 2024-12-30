@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	ft_set_target_node_b(t_stack *stack_a, t_stack *stack_b)
+static void	ft_set_target_node_b(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*current_a;
 	t_stack	*target_node;

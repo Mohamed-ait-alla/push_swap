@@ -15,3 +15,12 @@ void	ft_free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
+
+void	ft_del_one(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	free(tmp);
+}

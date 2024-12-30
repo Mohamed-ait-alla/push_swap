@@ -17,29 +17,6 @@ int ft_check_for_non_integers(const char *s)
     return (1);
 }
 
-long	ft_atol(const char *str)
-{
-	long	result;
-	int		sign;
-
-	result = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	while (*str >= 48 && *str <= 57)
-	{
-		result = (result * 10) + (*str - 48);
-		str++;
-	}
-	return (sign * result);
-}
 
 int ft_check_duplicates(t_stack *stack, int value)
 {
