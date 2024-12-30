@@ -8,7 +8,7 @@ static void	ft_push(t_stack **dest, t_stack **source)
 	if (!*source)
 		return ;
 	value = (*source)->value;
-	new = new_node(value);
+	new = ft_new_node(value);
 	new->next = *dest;
 	*dest = new;
 	ft_del_one(source);

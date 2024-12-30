@@ -69,6 +69,11 @@ void	rra(t_stack **stack_a, bool to_print);
 void	rrb(t_stack **stack_b, bool to_print);
 void	rrr(t_stack **stack_a, t_stack **stack_b, bool to_print);
 
+//***Helper rules
+void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_node);
+void	ft_rev_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_node);
+
+
 //***Algorithm
 void	ft_sort_three(t_stack **stack_a);
 void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
