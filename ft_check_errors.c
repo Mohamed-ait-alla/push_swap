@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:39 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 15:59:17 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/03 16:07:23 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,16 @@ int	ft_check_duplicates(t_stack *stack, int value)
 	return (1);
 }
 
-int	ft_check_error(char	*argv, t_stack	*stack_a)
+int	ft_check_error(char	*arg, t_stack	*stack_a)
 {
 	long	n;
 
-
-	n = ft_atol(argv);
+	if (!arg)
+		return (0);
+	n = ft_atol(arg);
 	if (n > INT_MAX || n < INT_MIN
 		|| !ft_check_duplicates(stack_a, (int)n)
-		|| !ft_check_for_non_integers(argv) || argv[0] == '\0')
+		|| !ft_check_for_non_integers(arg) || arg[0] == '\0')
 		return (0);
 	return (1);
 
