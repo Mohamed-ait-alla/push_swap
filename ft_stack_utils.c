@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:25 by mait-all          #+#    #+#             */
-/*   Updated: 2024/12/30 18:00:54 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/02 11:54:08 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,11 @@ t_stack	*ft_find_biggest_node(t_stack *stack)
 	t_stack	*biggest_node;
 
 	biggest_node = stack;
-	stack = stack -> next;
 	while (stack)
 	{
-		if (stack -> value > biggest_node -> value)
+		if (stack->value > biggest_node->value)
 			biggest_node = stack;
-		stack = stack -> next;
+		stack = stack->next;
 	}
 	return (biggest_node);
 }
@@ -57,13 +56,16 @@ t_stack	*ft_find_smallest_node(t_stack *stack)
 
 t_stack	*ft_get_cheapest_node(t_stack *stack)
 {
+	t_stack *tmp;
+
+	tmp = stack;
 	while (stack)
 	{
 		if (stack->cheapest)
 			return (stack);
 		stack = stack -> next;
 	}
-	return (stack);
+	return (tmp);
 }
 
 void	ft_prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)

@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:49 by mait-all          #+#    #+#             */
-/*   Updated: 2024/12/30 17:57:55 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/03 10:36:20 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,29 @@
 
 static void	ft_rotate(t_stack **stack)
 {
-	t_stack	*first;
 	t_stack	*tmp;
 
-	if (!*stack || !(*stack)->next)
-		return ;
-	first = (*stack);
-	tmp = (*stack);
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = first;
-	*stack = first->next;
-	first->next = NULL;
+	if (ft_stack_len(*stack) > 1)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		tmp -> next = NULL;
+		ft_append_node(stack, tmp);
+	}
 }
 
 void	ra(t_stack **stack_a, bool to_print)
 {
 	ft_rotate(stack_a);
 	if (!to_print)
-		printf("ra\n");
+		write(1, "ra\n", 3);
 }
 
 void	rb(t_stack **stack_b, bool to_print)
 {
 	ft_rotate(stack_b);
 	if (!to_print)
-		printf("rb\n");
+		write(1, "rb\n", 3);
 }
 
 void	rr(t_stack	**stack_a, t_stack **stack_b, bool to_print)
@@ -47,7 +44,7 @@ void	rr(t_stack	**stack_a, t_stack **stack_b, bool to_print)
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
 	if (!to_print)
-		printf("rr\n");
+		write(1, "rr\n", 3);
 }
 
 void	ft_rotate_both(t_stack **stack_a,
@@ -55,7 +52,9 @@ void	ft_rotate_both(t_stack **stack_a,
 						t_stack *cheapest_node)
 {
 	while (*stack_b != cheapest_node->target_node && *stack_a != cheapest_node)
+	{
 		rr(stack_a, stack_b, false);
-	ft_current_index(*stack_a);
-	ft_current_index(*stack_b);
+		ft_current_index(*stack_a);
+		ft_current_index(*stack_b);
+	}
 }

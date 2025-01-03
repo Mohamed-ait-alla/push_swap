@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:16 by mait-all          #+#    #+#             */
-/*   Updated: 2024/12/30 18:01:37 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/03 10:37:48 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 
 static void	ft_swap(t_stack **stack)
 {
-	int	tmp;
+	t_stack *tmp;
 
-	if (!*stack || !(*stack)->next)
-		return ;
-	tmp = ((*stack)->value);
-	(*stack)->value = (*stack)->next->value;
-	(*stack)->next->value = tmp;
+	if (ft_stack_len(*stack) > 1)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		tmp->next = (*stack)->next;
+		(*stack)->next = tmp;
+	}
 }
 
 void	sa(t_stack **stack_a, bool to_print)
 {
 	ft_swap(stack_a);
 	if (!to_print)
-		printf("sa\n");
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_stack **stack_b, bool to_print)
 {
 	ft_swap(stack_b);
 	if (!to_print)
-		printf ("sb");
+		write(1, "sb\n", 3);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b, bool to_print)
@@ -42,5 +44,5 @@ void	ss(t_stack **stack_a, t_stack **stack_b, bool to_print)
 	ft_swap(stack_a);
 	ft_swap(stack_b);
 	if (!to_print)
-		printf("ss\n");
+		write(1, "ss\n", 3);
 }

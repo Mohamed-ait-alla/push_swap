@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:08 by mait-all          #+#    #+#             */
-/*   Updated: 2024/12/30 17:54:51 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:54:07 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,14 @@ t_stack	*ft_new_node(int value)
 	return (new);
 }
 
-static long	ft_atol(const char *str)
+t_stack	*ft_get_last(t_stack *stack)
+{
+	while (stack && stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}
+
+long	ft_atol(const char *str)
 {
 	long	result;
 	int		sign;
@@ -48,41 +55,45 @@ static long	ft_atol(const char *str)
 	return (sign * result);
 }
 
-static void	ft_append_node(t_stack **stack, int value)
+void	ft_append_node(t_stack **stack, t_stack *new)
 {
-	t_stack	*new;
-	t_stack	*current;
+	t_stack	*last;
 
-	new = ft_new_node(value);
-	if (!(*stack))
-		(*stack) = new;
-	else
+	if (stack)
 	{
-		current = *stack;
-		while (current->next)
-			current = current->next;
-		current->next = new;
+		if (stack[0])
+		{
+			last = ft_get_last(*stack);
+			last->next = new;
+		}
+		else
+			stack[0] = new;
 	}
 }
 
-void	ft_init_stack_a(t_stack **stack_a, char **argv)
+void	ft_init_stack_a(int argc, char	**argv, t_stack **stack_a)
 {
 	int		i;
-	long	n;
+	int		j;
+	char	**splited;
 
 	i = 0;
-	while (argv[i])
+	while (++i < argc)
 	{
-		n = ft_atol(argv[i]);
-		if (n > INT_MAX || n < INT_MIN
-			|| !ft_check_duplicates(*stack_a, (int)n)
-			|| !ft_check_for_non_integers(argv[i]))
+		splited = ft_split(argv[i], ' ');
+		j = 0;
+		while (splited[j] || (!j && !splited[j]))
 		{
-			ft_free_stack(stack_a);
-			printf("Error\n");
-			exit(1);
+			if (!ft_check_error(splited[j], *stack_a) || (!j && !splited[j]))
+			{
+				ft_free_splited(splited);
+				ft_free_stack(stack_a);
+				write(1, "Error\n", 6);
+				exit(1);
+			}
+			ft_append_node(stack_a, ft_new_node((int)ft_atol(splited[j])));
+			j++;
 		}
-		ft_append_node(stack_a, (int)n);
-		i++;
+		ft_free_splited(splited);
 	}
 }

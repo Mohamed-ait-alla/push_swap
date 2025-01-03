@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:26 by mait-all          #+#    #+#             */
-/*   Updated: 2024/12/30 17:47:01 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:55:20 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_current_index(t_stack *stack)
 		else
 			stack->above_median = false;
 		stack = stack -> next;
-		++i;
+		i++;
 	}
 }
 
@@ -70,13 +70,17 @@ static void	ft_calc_cost_analysis_a(t_stack *stack_a, t_stack *stack_b)
 	len_b = ft_stack_len(stack_b);
 	while (stack_a)
 	{
-		stack_a->push_cost = stack_a->index;
-		if (!(stack_a->above_median))
-			stack_a->push_cost = len_a - stack_a->index;
-		if (stack_a->target_node->above_median)
-			stack_a->push_cost += stack_a->target_node->index;
+		if (stack_a->above_median && stack_a->target_node->above_median)
+			stack_a->push_cost = ft_max(stack_a->index, stack_a->target_node->index);
+		else if (!stack_a->above_median && !stack_a->target_node->above_median)
+			stack_a->push_cost = ft_max(len_a - stack_a->index, len_b - stack_a->target_node->index);
 		else
-			stack_a->push_cost += len_b - stack_a->target_node->index;
+		{
+			if (stack_a->above_median)
+				stack_a->push_cost = stack_a->index + (len_b - stack_a->target_node->index);
+			else
+				stack_a->push_cost = stack_a->target_node->index + (len_a - stack_a->index);
+		}
 		stack_a = stack_a -> next;
 	}
 }
@@ -96,6 +100,8 @@ void	ft_set_cheapest(t_stack *stack)
 			cheapest_value = stack->push_cost;
 			cheapest_node = stack;
 		}
+		else
+			stack->cheapest = false;
 		stack = stack->next;
 	}
 	cheapest_node->cheapest = true;
