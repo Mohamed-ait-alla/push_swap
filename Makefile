@@ -1,5 +1,5 @@
-SRCS =  ft_init_stack.c ft_check_errors.c ft_utils.c \
-		ft_sort_stacks.c ft_stack_utils.c ft_init_a_to_b.c \
+SRCS =  ft_init_stack.c ft_check_errors.c ft_stack_utils_1.c \
+		ft_sort_stacks.c ft_stack_utils_2.c ft_init_a_to_b.c \
 		ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
 		ft_clear_stacks.c ft_split.c push_swap.c 
 

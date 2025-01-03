@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:26 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 15:41:02 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:48:30 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,20 @@ typedef struct s_stack
 
 // we don't need this function when we gonna push this shit //
 void	ft_display(t_stack *stack);
-int	ft_max(int a, int b);
-long	ft_atol(const char *str);
 
 //***Stack initialazation
 t_stack	*ft_new_node(int value);
 void	ft_append_node(t_stack **stack, t_stack *new);
 void	ft_init_stack_a(int argc, char	**argv, t_stack **stack_a);
 char	**ft_split(char const *s, char c);
+long	ft_atol(const char *str);
 
 //***Handle errors
 int		ft_check_duplicates(t_stack *stack, int value);
 int		ft_check_for_non_integers(const char *s);
-int	ft_check_error(char	*argv, t_stack	*stack_a);
+int		ft_check_error(char	*argv, t_stack	*stack_a);
 
 //***Free memory
-void	ft_del_one(t_stack **stack);
 void	ft_free_stack(t_stack **stack);
 void	ft_free_splited(char **splited);
 
@@ -62,6 +60,7 @@ t_stack	*ft_find_biggest_node(t_stack *stack);
 t_stack	*ft_find_smallest_node(t_stack *stack);
 bool	ft_is_sorted(t_stack *stack);
 int		ft_stack_len(t_stack *stack);
+int		ft_max(int a, int b);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 t_stack	*ft_get_last(t_stack *stack);
 

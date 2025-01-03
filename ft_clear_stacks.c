@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:33 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 15:37:31 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:36:34 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,6 @@ void	ft_free_stack(t_stack **stack)
 		current = tmp;
 	}
 	*stack = NULL;
-}
-
-void	ft_del_one(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = *stack;
-	*stack = (*stack)->next;
-	free(tmp);
 }
 
 void	ft_free_splited(char **splited)
