@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:26 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 17:48:30 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:25:57 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ char	**ft_split(char const *s, char c);
 long	ft_atol(const char *str);
 
 //***Handle errors
-int		ft_check_duplicates(t_stack *stack, int value);
-int		ft_check_for_non_integers(const char *s);
 int		ft_check_error(char	*argv, t_stack	*stack_a);
 
 //***Free memory
