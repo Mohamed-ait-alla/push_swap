@@ -7,7 +7,7 @@ SOURCES =  ft_init_stack.c ft_check_errors.c ft_stack_utils_1.c \
 BONUS_SRCS = ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c \
 			push_swap_bonus.c ft_init_stack_bonus.c ft_check_errors_bonus.c \
 			ft_utils_bonus.c ft_cases_bonus.c ft_push_bonus.c ft_swap_bonus.c \
-			ft_rotate_bonus.c ft_rev_rotate_bonus.c ft_clear_stacks_bonus.c \
+			ft_rotate_bonus.c ft_reverse_rotate_bonus.c ft_clear_stacks_bonus.c \
 			ft_split_bonus.c
 
 OBJS = ${SOURCES:.c=.o}
