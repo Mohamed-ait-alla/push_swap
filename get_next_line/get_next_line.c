@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:51:14 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 11:53:20 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:24:59 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,18 @@ static char	*ft_extract_line(char **readed_lines)
 char	*get_next_line(int fd)
 {
 	static char	*readed_lines;
+	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	readed_lines = ft_fill_line_buffer(fd, readed_lines);
 	if (!readed_lines)
 		return (NULL);
-	return (ft_extract_line(&readed_lines));
+	line = ft_extract_line(&readed_lines);
+	if (!line && readed_lines)
+	{
+		free(readed_lines);
+		readed_lines = NULL;
+	}
+	return (line);
 }

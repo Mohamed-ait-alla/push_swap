@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:02:39 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:25:14 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:57:45 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	free(action);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
+	return (0);
 }
