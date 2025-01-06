@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:08 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 10:50:22 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:17:22 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	ft_init_stack_a(int argc, char	**argv, t_stack **stack_a)
 			{
 				ft_free_splited(splited);
 				ft_free_stack(stack_a);
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				exit(1);
 			}
 			ft_append_node(stack_a, ft_new_node((int)ft_atol(splited[j])));
