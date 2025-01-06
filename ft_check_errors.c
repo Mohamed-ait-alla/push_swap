@@ -6,11 +6,16 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:39 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:09:46 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:05:50 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
 
 static int	ft_check_for_non_integers(const char *s)
 {
@@ -19,9 +24,9 @@ static int	ft_check_for_non_integers(const char *s)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == '-' && i == 0)
+		if (s[i] == '-' && i == 0 && ft_isdigit(s[i + 1]))
 			i++;
-		else if (s[i] == '+' && i == 0)
+		else if (s[i] == '+' && i == 0 && ft_isdigit(s[i + 1]))
 			i++;
 		else if (s[i] < 48 || s[i] > 57)
 			return (0);

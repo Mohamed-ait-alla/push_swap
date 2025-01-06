@@ -12,6 +12,11 @@
 
 #include "push_swap_bonus.h"
 
+static int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
 static int	ft_check_for_non_integers(const char *s)
 {
 	int	i;
@@ -19,9 +24,9 @@ static int	ft_check_for_non_integers(const char *s)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == '-' && i == 0)
+		if (s[i] == '-' && i == 0 && ft_isdigit(s[i + 1]))
 			i++;
-		else if (s[i] == '+' && i == 0)
+		else if (s[i] == '+' && i == 0 && ft_isdigit(s[i + 1]))
 			i++;
 		else if (s[i] < 48 || s[i] > 57)
 			return (0);
