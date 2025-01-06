@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_utils.c                                   :+:      :+:    :+:   */
+/*   ft_stack_utils_1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:25 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/02 11:54:08 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:15:28 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_stack	*ft_find_smallest_node(t_stack *stack)
 
 t_stack	*ft_get_cheapest_node(t_stack *stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = stack;
 	while (stack)

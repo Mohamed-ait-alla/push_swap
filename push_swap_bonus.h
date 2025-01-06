@@ -6,17 +6,17 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:03:15 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 11:39:07 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:15:54 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <stdbool.h>
-#include "./get_next_line/get_next_line.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stdbool.h>
+# include "./get_next_line/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -29,20 +29,31 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new);
+size_t	ft_strlen(const char *s);
+long	ft_atol(const char *str);
+char	**ft_split(char const *s, char c);
+void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b);
+
+//***Stack initialazation
 t_stack	*ft_get_last(t_stack *stack);
 void	ft_append_node(t_stack **stack, t_stack *new);
-int	ft_stack_len(t_stack *stack);
+void	ft_init_stack_a(int argc, char	**argv, t_stack **stack_a);
+
+//***Free memory
 void	ft_free_stack(t_stack **stack);
 void	ft_free_splited(char **splited);
-char	**ft_split(char const *s, char c);
+
+//***Handle errors
 void	ft_error(char *action);
-void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-bool	ft_is_sorted(t_stack *stack);
 int		ft_check_error(char	*arg, t_stack	*stack_a);
-void	ft_init_stack_a(int argc, char	**argv, t_stack **stack_a);
-// ---------------
+
+//***Utils
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
+int		ft_stack_len(t_stack *stack);
+bool	ft_is_sorted(t_stack *stack);
+
+//***Actions
 void	pa(t_stack	**stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 void	sa(t_stack **stack_a);
@@ -55,7 +66,7 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
-// --------------
+//***Cases
 bool	ft_push_case(char *action, t_stack **stack_a, t_stack **stack_b);
 bool	ft_swap_case(char *action, t_stack **stack_a, t_stack **stack_b);
 bool	ft_rotate_case(char *action, t_stack **stack_a, t_stack **stack_b);

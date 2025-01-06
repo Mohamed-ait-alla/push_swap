@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bonus_cases.c                                   :+:      :+:    :+:   */
+/*   ft_cases_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:29:02 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 10:14:07 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:08:55 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,12 @@ bool	ft_rev_rotate_case(char *action, t_stack **stack_a, t_stack **stack_b)
 	{
 		rra(stack_a);
 		return (true);
-	}	
+	}
 	else if (ft_strncmp(action, "rrb\n", ft_strlen(action)) == 0)
 	{
 		rrb(stack_b);
 		return (true);
-	}	
+	}
 	else if (ft_strncmp(action, "rrr\n", ft_strlen(action)) == 0)
 	{
 		rrr(stack_a, stack_b);

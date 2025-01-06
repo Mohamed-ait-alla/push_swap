@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_stack_utils_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:08 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 10:29:43 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:35:34 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,27 @@ bool	ft_is_sorted(t_stack *stack)
 	return (true);
 }
 
+void	ft_current_index(t_stack *stack)
+{
+	int	i;
+	int	median;
+
+	if (!stack)
+		return ;
+	median = ft_stack_len(stack) / 2;
+	i = 0;
+	while (stack)
+	{
+		stack->index = i;
+		if (i <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack -> next;
+		i++;
+	}
+}
+
 // display a stack
 void	ft_display(t_stack *stack)
 {
@@ -37,8 +58,6 @@ void	ft_display(t_stack *stack)
 		tmp = tmp->next;
 	}
 }
-
-
 
 void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
@@ -56,5 +75,5 @@ int	ft_max(int a, int b)
 {
 	if (a > b)
 		return (a);
-	return(b);
+	return (b);
 }

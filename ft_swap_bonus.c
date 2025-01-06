@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:48:33 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 09:55:26 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:24:48 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_swap(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (ft_stack_len(*stack) > 1)
 	{

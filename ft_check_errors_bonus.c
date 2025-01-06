@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	ft_check_for_non_integers(const char *s)
 {
@@ -54,5 +54,11 @@ int	ft_check_error(char	*arg, t_stack	*stack_a)
 		|| !ft_check_for_non_integers(arg) || arg[0] == '\0')
 		return (0);
 	return (1);
+}
 
+void	ft_error(char *action)
+{
+	free(action);
+	write(2, "Error\n", 6);
+	exit(1);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_rotate_bonus.c                              :+:      :+:    :+:   */
+/*   ft_reverse_rotate_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:48:29 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 09:57:08 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:19:27 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_reverse_rotate(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	t_stack	*last;
-	
+
 	if (ft_stack_len(*stack) > 1)
 	{
 		tmp = *stack;

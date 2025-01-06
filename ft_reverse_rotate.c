@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:56 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 10:45:33 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:14:30 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_reverse_rotate(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	t_stack	*last;
-	
+
 	if (ft_stack_len(*stack) > 1)
 	{
 		tmp = *stack;

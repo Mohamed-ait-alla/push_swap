@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:39 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/04 12:23:40 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:09:46 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,4 @@ int	ft_check_error(char	*arg, t_stack	*stack_a)
 		|| !ft_check_for_non_integers(arg) || arg[0] == '\0')
 		return (0);
 	return (1);
-
 }

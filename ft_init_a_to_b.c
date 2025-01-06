@@ -6,30 +6,30 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:26 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 17:38:04 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:38:35 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_current_index(t_stack *stack)
+static void	ft_cost_analysis_logic(t_stack *stack_a, int len_a, int len_b)
 {
-	int	i;
-	int	median;
-
-	if (!stack)
-		return ;
-	median = ft_stack_len(stack) / 2;
-	i = 0;
-	while (stack)
+	if (stack_a->above_median
+		&& stack_a->target_node->above_median)
+		stack_a->push_cost = ft_max(stack_a->index,
+				stack_a->target_node->index);
+	else if (!stack_a->above_median
+		&& !stack_a->target_node->above_median)
+		stack_a->push_cost = ft_max(len_a - stack_a->index,
+				len_b - stack_a->target_node->index);
+	else
 	{
-		stack->index = i;
-		if (i <= median)
-			stack->above_median = true;
+		if (stack_a->above_median)
+			stack_a->push_cost = stack_a->index
+				+ (len_b - stack_a->target_node->index);
 		else
-			stack->above_median = false;
-		stack = stack -> next;
-		i++;
+			stack_a->push_cost = stack_a->target_node->index
+				+ (len_a - stack_a->index);
 	}
 }
 
@@ -70,17 +70,7 @@ static void	ft_calc_cost_analysis_a(t_stack *stack_a, t_stack *stack_b)
 	len_b = ft_stack_len(stack_b);
 	while (stack_a)
 	{
-		if (stack_a->above_median && stack_a->target_node->above_median)
-			stack_a->push_cost = ft_max(stack_a->index, stack_a->target_node->index);
-		else if (!stack_a->above_median && !stack_a->target_node->above_median)
-			stack_a->push_cost = ft_max(len_a - stack_a->index, len_b - stack_a->target_node->index);
-		else
-		{
-			if (stack_a->above_median)
-				stack_a->push_cost = stack_a->index + (len_b - stack_a->target_node->index);
-			else
-				stack_a->push_cost = stack_a->target_node->index + (len_a - stack_a->index);
-		}
+		ft_cost_analysis_logic(stack_a, len_a, len_b);
 		stack_a = stack_a -> next;
 	}
 }
