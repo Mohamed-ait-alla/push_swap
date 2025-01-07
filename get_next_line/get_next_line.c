@@ -6,11 +6,18 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:51:14 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 15:24:59 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:38:58 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static char	*ft_error(char *buffer, char *readed_lines)
+{
+	free(buffer);
+	free(readed_lines);
+	return (NULL);
+}
 
 static char	*ft_fill_line_buffer(int fd, char *readed_lines)
 {
@@ -26,11 +33,7 @@ static char	*ft_fill_line_buffer(int fd, char *readed_lines)
 	{
 		nbytes = read(fd, buffer, BUFFER_SIZE);
 		if (nbytes == -1)
-		{
-			free(buffer);
-			free(readed_lines);
-			return (NULL);
-		}
+			return (ft_error(buffer, readed_lines));
 		buffer[nbytes] = '\0';
 		if (!readed_lines)
 			readed_lines = ft_strdup("");
