@@ -61,9 +61,12 @@ int	ft_check_error(char	*arg, t_stack	*stack_a)
 	return (1);
 }
 
-void	ft_error(char *action)
+void	ft_error(char *action, t_stack **stack_a, t_stack **stack_b)
 {
 	free(action);
+	get_next_line(-2);
+	ft_free_stack(stack_a);
+	ft_free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit(1);
 }

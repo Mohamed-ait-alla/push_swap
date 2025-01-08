@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:24:24 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:16:40 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/08 15:55:16 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b)
 		if (!ft_swap_case(action, stack_a, stack_b))
 			if (!ft_rotate_case(action, stack_a, stack_b))
 				if (!ft_rev_rotate_case(action, stack_a, stack_b))
-					ft_error(action);
+					ft_error(action, stack_a, stack_b);
 }

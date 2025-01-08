@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:51:14 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/07 14:38:58 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/08 21:41:15 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ static char	*ft_extract_line(char **readed_lines)
 	line = ft_substr(*readed_lines, 0, i + ((*readed_lines)[i] == '\n'));
 	tmp = ft_strdup(*readed_lines + i + ((*readed_lines)[i] == '\n'));
 	free(*readed_lines);
+	*readed_lines = NULL;
 	*readed_lines = tmp;
 	return (line);
 }
@@ -70,6 +71,11 @@ char	*get_next_line(int fd)
 	static char	*readed_lines;
 	char		*line;
 
+	if (fd == -2)
+	{
+		free(readed_lines);
+		return NULL;
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	readed_lines = ft_fill_line_buffer(fd, readed_lines);
