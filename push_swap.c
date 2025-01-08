@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:56 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 15:42:19 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:13:32 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int	main(int argc, char **argv)
 			ft_sort_stacks(&stack_a, &stack_b);
 	}
 	ft_free_stack(&stack_a);
+	return (0);
 }

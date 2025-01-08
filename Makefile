@@ -19,12 +19,20 @@ CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
 
-all: ${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+${NAME}: ${OBJS}
+		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
-bonus: ${BONUS_OBJS}
-	${CC} ${CFLAGS} ${BONUS_OBJS} -o ${BONUS_NAME}
+${BONUS_NAME}: ${BONUS_OBJS}
+			${CC} ${CFLAGS} ${BONUS_OBJS} -o ${BONUS_NAME}
+
+all: ${NAME}
+	
+
+bonus: ${BONUS_NAME}
+	
 
 clean:
 	${RM} ${OBJS}
@@ -37,3 +45,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+.SECONDARY: ${OBJS} ${BONUS_OBJS}
