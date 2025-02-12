@@ -6,13 +6,12 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:26 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 10:51:21 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:36:50 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdio.h> // we don't need it when we gonna push that shit
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
@@ -28,9 +27,6 @@ typedef struct s_stack
 	struct s_stack	*target_node;
 	struct s_stack	*next;
 }	t_stack;
-
-// we don't need this function when we gonna push this shit //
-void	ft_display(t_stack *stack);
 
 //***Stack initialazation
 t_stack	*ft_new_node(int value);
