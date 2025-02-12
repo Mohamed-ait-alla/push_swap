@@ -6,11 +6,11 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:39 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 16:05:50 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:17:50 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap.h"
 
 static int	ft_isdigit(int c)
 {

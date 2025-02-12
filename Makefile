@@ -1,14 +1,14 @@
-SOURCES =  ft_init_stack.c ft_check_errors.c ft_stack_utils_1.c \
-		ft_sort_stacks.c ft_stack_utils_2.c ft_init_a_to_b.c \
-		ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
-		ft_clear_stacks.c ft_split.c push_swap.c 
+SOURCES =  ./srcs/ft_init_stack.c ./srcs/ft_check_errors.c ./srcs/ft_stack_utils_1.c \
+		./srcs/ft_sort_stacks.c ./srcs/ft_stack_utils_2.c ./srcs/ft_init_a_to_b.c \
+		./srcs/ft_push.c ./srcs/ft_swap.c ./srcs/ft_rotate.c ./srcs/ft_reverse_rotate.c \
+		./srcs/ft_clear_stacks.c ./srcs/ft_split.c ./srcs/push_swap.c 
 
 
 BONUS_SRCS = ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c \
-			push_swap_bonus.c ft_init_stack_bonus.c ft_check_errors_bonus.c \
-			ft_utils_bonus.c ft_cases_bonus.c ft_push_bonus.c ft_swap_bonus.c \
-			ft_rotate_bonus.c ft_reverse_rotate_bonus.c ft_clear_stacks_bonus.c \
-			ft_split_bonus.c
+			./bonus/push_swap_bonus.c ./bonus/ft_init_stack_bonus.c ./bonus/ft_check_errors_bonus.c \
+			./bonus/ft_utils_bonus.c ./bonus/ft_cases_bonus.c ./bonus/ft_push_bonus.c ./bonus/ft_swap_bonus.c \
+			./bonus/ft_rotate_bonus.c ./bonus/ft_reverse_rotate_bonus.c ./bonus/ft_clear_stacks_bonus.c \
+			./bonus/ft_split_bonus.c
 
 OBJS = ${SOURCES:.c=.o}
 BONUS_OBJS = ${BONUS_SRCS:.c=.o}

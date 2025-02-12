@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 10:22:51 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/05 10:50:58 by mait-all         ###   ########.fr       */
+/*   Created: 2025/01/05 11:21:29 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:20:06 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap_bonus.h"
 
 static size_t	ft_get_len(const char *s, char c)
 {

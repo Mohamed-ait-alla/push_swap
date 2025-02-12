@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_stack_utils_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/05 09:24:24 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/08 15:55:16 by mait-all         ###   ########.fr       */
+/*   Created: 2024/12/30 17:39:08 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:15:23 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../Includes/push_swap.h"
 
 bool	ft_is_sorted(t_stack *stack)
 {
@@ -25,33 +25,38 @@ bool	ft_is_sorted(t_stack *stack)
 	return (true);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_current_index(t_stack *stack)
 {
-	size_t	i;
+	int	i;
+	int	median;
 
+	if (!stack)
+		return ;
+	median = ft_stack_len(stack) / 2;
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
-	{
-		if ((unsigned char)s1[i] > (unsigned char)s2[i])
-			return (1);
-		else if ((unsigned char)s1[i] < (unsigned char)s2[i])
-			return (-1);
-		i++;
-	}
-	return (0);
-}
-
-int	ft_stack_len(t_stack *stack)
-{
-	int	count;
-
-	count = 0;
 	while (stack)
 	{
-		count++;
+		stack->index = i;
+		if (i <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
 		stack = stack -> next;
+		i++;
 	}
-	return (count);
+}
+
+// display a stack
+void	ft_display(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp)
+	{
+		printf("%d \n", tmp->value);
+		tmp = tmp->next;
+	}
 }
 
 void	ft_lstadd_front(t_stack **lst, t_stack *new)
@@ -66,11 +71,9 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	}
 }
 
-void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b)
+int	ft_max(int a, int b)
 {
-	if (!ft_push_case(action, stack_a, stack_b))
-		if (!ft_swap_case(action, stack_a, stack_b))
-			if (!ft_rotate_case(action, stack_a, stack_b))
-				if (!ft_rev_rotate_case(action, stack_a, stack_b))
-					ft_error(action, stack_a, stack_b);
+	if (a > b)
+		return (a);
+	return (b);
 }

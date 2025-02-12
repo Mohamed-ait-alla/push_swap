@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_bonus.c                                    :+:      :+:    :+:   */
+/*   ft_clear_stacks.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/05 09:48:41 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:18:22 by mait-all         ###   ########.fr       */
+/*   Created: 2024/12/30 17:40:33 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:17:46 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../Includes/push_swap.h"
 
-static void	ft_push(t_stack **dest, t_stack **source)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack	*new;
+	t_stack	*current;
+	t_stack	*tmp;
 
-	if (ft_stack_len(*source) > 0)
+	current = *stack;
+	while (current)
 	{
-		new = *source;
-		*source = (*source)->next;
-		new->next = *dest;
-		*dest = new;
+		tmp = current -> next;
+		current->value = 0;
+		free(current);
+		current = tmp;
 	}
+	*stack = NULL;
 }
 
-void	pa(t_stack	**stack_a, t_stack **stack_b)
+void	ft_free_splited(char **splited)
 {
-	ft_push(stack_a, stack_b);
-}
+	int	i;
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_push(stack_a, stack_b);
+	i = 0;
+	while (splited[i])
+		free(splited[i++]);
+	free(splited);
 }

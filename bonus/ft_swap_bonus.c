@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_swap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 17:39:16 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:11:31 by mait-all         ###   ########.fr       */
+/*   Created: 2025/01/05 09:48:33 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:20:10 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap_bonus.h"
 
 static void	ft_swap(t_stack **stack)
 {
@@ -25,24 +25,18 @@ static void	ft_swap(t_stack **stack)
 	}
 }
 
-void	sa(t_stack **stack_a, bool to_print)
+void	sa(t_stack **stack_a)
 {
 	ft_swap(stack_a);
-	if (!to_print)
-		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack **stack_b, bool to_print)
+void	sb(t_stack **stack_b)
 {
 	ft_swap(stack_b);
-	if (!to_print)
-		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b, bool to_print)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	if (!to_print)
-		write(1, "ss\n", 3);
 }

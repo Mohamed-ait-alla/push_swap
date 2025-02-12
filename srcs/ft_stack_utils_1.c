@@ -6,11 +6,11 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:25 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:15:28 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:17:17 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap.h"
 
 int	ft_stack_len(t_stack *stack)
 {

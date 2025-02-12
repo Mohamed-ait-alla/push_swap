@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_bonus.c                                    :+:      :+:    :+:   */
+/*   ft_reverse_rotate_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/05 09:48:33 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:24:48 by mait-all         ###   ########.fr       */
+/*   Created: 2025/01/05 09:48:29 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:19:59 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../Includes/push_swap_bonus.h"
 
-static void	ft_swap(t_stack **stack)
+static void	ft_reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*last;
 
 	if (ft_stack_len(*stack) > 1)
 	{
 		tmp = *stack;
-		*stack = (*stack)->next;
-		tmp->next = (*stack)->next;
-		(*stack)->next = tmp;
+		last = ft_get_last(*stack);
+		while (tmp->next != last)
+			tmp = tmp -> next;
+		tmp -> next = NULL;
+		ft_lstadd_front(stack, last);
 	}
 }
 
-void	sa(t_stack **stack_a)
+void	rra(t_stack **stack_a)
 {
-	ft_swap(stack_a);
+	ft_reverse_rotate(stack_a);
 }
 
-void	sb(t_stack **stack_b)
+void	rrb(t_stack **stack_b)
 {
-	ft_swap(stack_b);
+	ft_reverse_rotate(stack_b);
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_swap(stack_a);
-	ft_swap(stack_b);
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
 }

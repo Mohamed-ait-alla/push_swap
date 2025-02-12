@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clear_stacks.c                                  :+:      :+:    :+:   */
+/*   ft_clear_stacks_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 17:40:33 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 17:36:34 by mait-all         ###   ########.fr       */
+/*   Created: 2025/01/05 11:23:51 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:19:48 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap_bonus.h"
 
 void	ft_free_stack(t_stack **stack)
 {

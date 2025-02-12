@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:03:15 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/08 15:55:33 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:24:00 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "./get_next_line/get_next_line.h"
+# include "../get_next_line/get_next_line.h"
 
 typedef struct s_stack
 {

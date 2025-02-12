@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_push_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 17:40:03 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/03 10:34:02 by mait-all         ###   ########.fr       */
+/*   Created: 2025/01/05 09:48:41 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:19:55 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap_bonus.h"
 
 static void	ft_push(t_stack **dest, t_stack **source)
 {
@@ -25,16 +25,12 @@ static void	ft_push(t_stack **dest, t_stack **source)
 	}
 }
 
-void	pa(t_stack	**stack_a, t_stack **stack_b, bool to_print)
+void	pa(t_stack	**stack_a, t_stack **stack_b)
 {
 	ft_push(stack_a, stack_b);
-	if (!to_print)
-		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b, bool to_print)
+void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_push(stack_a, stack_b);
-	if (!to_print)
-		write(1, "pb\n", 3);
 }

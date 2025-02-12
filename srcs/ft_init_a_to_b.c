@@ -6,11 +6,11 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:40:26 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:38:35 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:17:42 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap.h"
 
 static void	ft_cost_analysis_logic(t_stack *stack_a, int len_a, int len_b)
 {

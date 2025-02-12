@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../Includes/push_swap_bonus.h"
 
 static int	ft_isdigit(int c)
 {

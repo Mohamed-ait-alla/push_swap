@@ -6,11 +6,11 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:56 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/07 15:13:32 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:17:02 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {

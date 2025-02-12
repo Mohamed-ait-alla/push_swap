@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_utils_2.c                                 :+:      :+:    :+:   */
+/*   ft_utils_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 17:39:08 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/06 12:35:34 by mait-all         ###   ########.fr       */
+/*   Created: 2025/01/05 09:24:24 by mait-all          #+#    #+#             */
+/*   Updated: 2025/02/12 15:20:13 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap_bonus.h"
 
 bool	ft_is_sorted(t_stack *stack)
 {
@@ -25,38 +25,33 @@ bool	ft_is_sorted(t_stack *stack)
 	return (true);
 }
 
-void	ft_current_index(t_stack *stack)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	median;
+	size_t	i;
 
-	if (!stack)
-		return ;
-	median = ft_stack_len(stack) / 2;
 	i = 0;
-	while (stack)
+	while ((s1[i] || s2[i]) && i < n)
 	{
-		stack->index = i;
-		if (i <= median)
-			stack->above_median = true;
-		else
-			stack->above_median = false;
-		stack = stack -> next;
+		if ((unsigned char)s1[i] > (unsigned char)s2[i])
+			return (1);
+		else if ((unsigned char)s1[i] < (unsigned char)s2[i])
+			return (-1);
 		i++;
 	}
+	return (0);
 }
 
-// display a stack
-void	ft_display(t_stack *stack)
+int	ft_stack_len(t_stack *stack)
 {
-	t_stack	*tmp;
+	int	count;
 
-	tmp = stack;
-	while (tmp)
+	count = 0;
+	while (stack)
 	{
-		printf("%d \n", tmp->value);
-		tmp = tmp->next;
+		count++;
+		stack = stack -> next;
 	}
+	return (count);
 }
 
 void	ft_lstadd_front(t_stack **lst, t_stack *new)
@@ -71,9 +66,11 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	}
 }
 
-int	ft_max(int a, int b)
+void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	if (!ft_push_case(action, stack_a, stack_b))
+		if (!ft_swap_case(action, stack_a, stack_b))
+			if (!ft_rotate_case(action, stack_a, stack_b))
+				if (!ft_rev_rotate_case(action, stack_a, stack_b))
+					ft_error(action, stack_a, stack_b);
 }

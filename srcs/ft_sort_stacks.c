@@ -6,11 +6,11 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:42 by mait-all          #+#    #+#             */
-/*   Updated: 2025/01/02 18:57:52 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:17:24 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap.h"
 
 static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 {
