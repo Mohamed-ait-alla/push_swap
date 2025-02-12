@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:03:15 by mait-all          #+#    #+#             */
-/*   Updated: 2025/02/12 15:24:00 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:45:29 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-size_t	ft_strlen(const char *s);
-long	ft_atol(const char *str);
-char	**ft_split(char const *s, char c);
-void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b);
 
 //***Stack initialazation
 t_stack	*ft_get_last(t_stack *stack);
 void	ft_append_node(t_stack **stack, t_stack *new);
+char	**ft_split(char const *s, char c);
+long	ft_atol(const char *str);
 void	ft_init_stack_a(int argc, char	**argv, t_stack **stack_a);
 
 //***Free memory
@@ -51,7 +49,9 @@ int		ft_check_error(char	*arg, t_stack	*stack_a);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_stack_len(t_stack *stack);
+size_t	ft_strlen(const char *s);
 bool	ft_is_sorted(t_stack *stack);
+void	ft_execute_action(char	*action, t_stack **stack_a, t_stack **stack_b);
 
 //***Actions
 void	pa(t_stack	**stack_a, t_stack **stack_b);
