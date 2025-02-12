@@ -6,7 +6,7 @@
 /*   By: mait-all <mait-all@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:39:08 by mait-all          #+#    #+#             */
-/*   Updated: 2025/02/12 15:15:23 by mait-all         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:55:06 by mait-all         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,6 @@ void	ft_current_index(t_stack *stack)
 			stack->above_median = false;
 		stack = stack -> next;
 		i++;
-	}
-}
-
-// display a stack
-void	ft_display(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp)
-	{
-		printf("%d \n", tmp->value);
-		tmp = tmp->next;
 	}
 }
 
