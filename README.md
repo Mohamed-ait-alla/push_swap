@@ -76,27 +76,28 @@ The goal of the **Push Swap** project is to sort a stack of integers using a pre
 
 ## 📁 Project Structure
 
-push_swap/<br>
-├── Includes/<br>
-│   ├── push_swap_bonus.h<br>
-│   └── push_swap.h<br>
-│<br>
-├── bonus/<br>
-│   ├── ft_\*\_bonus.c<br>
-│   └── push_swap_bonus.c<br>
-│<br>
-├── get_next_line/<br>
-│   ├── get_next_line.c<br>
-│   ├── get_next_line_utils.c<br>
-│   └── get_next_line.h<br>
-│<br>
-├── srcs/<br>
-│   ├── ft_\*.c<br>
-│   └── push_swap.c<br>
-│<br>
-├── Makefile<br>
-└── README.md<br>
-
+```bash
+push_swap/
+├── Includes/
+│   ├── push_swap_bonus.h
+│   └── push_swap.h
+│
+├── bonus/
+│   ├── ft_*_bonus.c
+│   └── push_swap_bonus.c
+│
+├── get_next_line/
+│   ├── get_next_line.c
+│   ├── get_next_line_utils.c
+│   └── get_next_line.h
+│
+├── srcs/
+│   ├── ft_*.c
+│   └── push_swap.c
+│
+├── Makefile
+└── README.md
+```
 # 🚀 Bonus
 
 You can optionally create a checker program that validates the correctness of a given operation sequence.
