@@ -77,20 +77,22 @@ The goal of the **Push Swap** project is to sort a stack of integers using a pre
 ## 📁 Project Structure
 
 push_swap/<br>
-├── bonus/<br>
-│   └── *.c<br>
+├── Include/<br>
+│   ├── push_swap_bonus.h<br>
+│   └── push_swap.h<br>
 │<br>
-├── srcs/<br>
-│   └── *.c<br>
+├── bonus/<br>
+│   ├── ft_\*\_bonus.c<br>
+│   └── push_swap_bonus.c<br>
 │<br>
 ├── getnextline/<br>
 │   ├── get_next_line.c<br>
 │   ├── get_next_line_utils.c<br>
 │   └── get_next_line.h<br>
 │<br>
-├── include/<br>
-│	├── push_swap_bonus.h<br>
-│   └── push_swap.h<br>
+├── srcs/<br>
+│   ├── ft_\*.c<br>
+│   └── push_swap.c<br>
 │<br>
 ├── Makefile<br>
 └── README.md<br>
