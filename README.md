@@ -77,7 +77,7 @@ The goal of the **Push Swap** project is to sort a stack of integers using a pre
 ## 📁 Project Structure
 
 push_swap/<br>
-├── Include/<br>
+├── Includes/<br>
 │   ├── push_swap_bonus.h<br>
 │   └── push_swap.h<br>
 │<br>
@@ -85,7 +85,7 @@ push_swap/<br>
 │   ├── ft_\*\_bonus.c<br>
 │   └── push_swap_bonus.c<br>
 │<br>
-├── getnextline/<br>
+├── get_next_line/<br>
 │   ├── get_next_line.c<br>
 │   ├── get_next_line_utils.c<br>
 │   └── get_next_line.h<br>
